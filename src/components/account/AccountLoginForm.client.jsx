@@ -228,7 +228,7 @@ function PasswordField({password, setPassword, passwordError}) {
           className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
           type="submit"
         >
-          Sign in
+          Sign in test
         </button>
       </div>
       <div className="flex items-center justify-between mt-4">

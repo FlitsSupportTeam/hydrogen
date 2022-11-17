@@ -4,8 +4,8 @@ export default defineConfig({
   shopify: {
     defaultCountryCode: 'IN',
     defaultLanguageCode: 'EN',
-    storeDomain: Oxygen.env.PUBLIC_STORE_DOMAIN,
-    storefrontToken: Oxygen.env.PUBLIC_STOREFRONT_API_TOKEN,
+    storeDomain: 'flits-plus.myshopify.com', // Oxygen.env.PUBLIC_STORE_DOMAIN
+    storefrontToken: 'a63ff125050d5f859e2d2b21952ea1b2', // Oxygen.env.PUBLIC_STOREFRONT_API_TOKEN
     privateStorefrontToken: Oxygen.env.PRIVATE_STOREFRONT_API_TOKEN,
     storefrontApiVersion: '2022-07',
     storefrontId: Oxygen.env.PUBLIC_STOREFRONT_ID,
