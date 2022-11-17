@@ -68,7 +68,7 @@ export function AccountLoginForm({shopName}) {
   return (
     <div className="flex justify-center my-24 px-4">
       <div className="max-w-md w-full">
-        <h1 className="text-4xl">Sign in.</h1>
+        <h1 className="text-4xl">Sign in Test.</h1>
         <form noValidate className="pt-6 pb-8 mt-4 mb-4" onSubmit={onSubmit}>
           {hasSubmitError && (
             <div className="flex items-center justify-center mb-6 bg-zinc-500">
@@ -228,7 +228,7 @@ function PasswordField({password, setPassword, passwordError}) {
           className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
           type="submit"
         >
-          Sign in test
+          Sign in
         </button>
       </div>
       <div className="flex items-center justify-between mt-4">
