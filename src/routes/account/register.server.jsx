@@ -4,6 +4,7 @@ import {CacheNone, Seo, gql} from '@shopify/hydrogen';
 import {AccountCreateForm} from '~/components';
 import {Layout} from '~/components/index.server';
 import {getApiErrorMessage} from '~/lib/utils';
+import {FlitsSocialLogin} from '~/components';
 
 export default function Register({response}) {
   response.cache(CacheNone());
@@ -14,6 +15,7 @@ export default function Register({response}) {
         <Seo type="noindex" data={{title: 'Register'}} />
       </Suspense>
       <AccountCreateForm />
+      <FlitsSocialLogin />
     </Layout>
   );
 }

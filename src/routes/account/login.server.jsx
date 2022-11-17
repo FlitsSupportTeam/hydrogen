@@ -1,15 +1,23 @@
 import {Suspense} from 'react';
-import {useShopQuery, CacheLong, CacheNone, Seo, gql} from '@shopify/hydrogen';
+import {
+  useShopQuery,
+  CacheLong,
+  CacheNone,
+  Seo,
+  gql,
+  parseMetafieldValue,
+} from '@shopify/hydrogen';
 
 import {AccountLoginForm} from '~/components';
 import {Layout} from '~/components/index.server';
+import {FlitsSocialLogin} from '~/components';
 
 export default function Login({response}) {
   response.cache(CacheNone());
 
   const {
     data: {
-      shop: {name},
+      shop: {name, socialLoginPaid, socialLoginEnable},
     },
   } = useShopQuery({
     query: SHOP_QUERY,
@@ -17,23 +25,21 @@ export default function Login({response}) {
     preload: '*',
   });
 
+  const socialLoginPaidValue = parseMetafieldValue(socialLoginPaid);
+  const socialLoginEnableValue = parseMetafieldValue(socialLoginEnable);
+
   return (
     <Layout>
       <Suspense>
         <Seo type="noindex" data={{title: 'Login'}} />
       </Suspense>
       <AccountLoginForm shopName={name} />
+      {socialLoginPaidValue == '1' && socialLoginEnableValue == '1' ? (
+        <FlitsSocialLogin />
+      ) : null}
     </Layout>
   );
 }
-
-const SHOP_QUERY = gql`
-  query shopInfo {
-    shop {
-      name
-    }
-  }
-`;
 
 export async function api(request, {session, queryShop}) {
   if (!session) {
@@ -91,6 +97,28 @@ const LOGIN_MUTATION = gql`
       customerAccessToken {
         accessToken
         expiresAt
+      }
+    }
+  }
+`;
+
+const SHOP_QUERY = gql`
+  query shopInfo {
+    shop {
+      name
+      socialLoginPaid: metafield(
+        namespace: "Flits"
+        key: "IS_SOCIAL_LOGIN_PAID"
+      ) {
+        value
+        type
+      }
+      socialLoginEnable: metafield(
+        namespace: "Flits"
+        key: "IS_SOCIAL_LOGIN_ENABLE"
+      ) {
+        value
+        type
       }
     }
   }
