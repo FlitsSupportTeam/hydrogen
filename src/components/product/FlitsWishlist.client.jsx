@@ -31,7 +31,7 @@ export function FlitsWishlist(product) {
       wsl_product_count: '1',
     };
     let addUrl =
-      'https://app.getflits.com/api/1/'+Oxygen.env.FLITS_USER_ID+'/wishlist/add_to_wishlist?token='+Oxygen.env.FLITS_TOKEN;
+      'https://app.getflits.com/api/1/'+import.meta.env.FLITS_USER_ID+'/wishlist/add_to_wishlist?token='+import.meta.env.FLITS_TOKEN;
     // '//flits-support-workplace-8.myshopify.com/apps/flits/api/1/25014/wishlist/add_to_wishlist';
     const things = fetchSync(addUrl, {
       method: 'POST',
