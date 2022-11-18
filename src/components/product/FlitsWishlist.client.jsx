@@ -5,8 +5,11 @@ export default defineConfig({
   // privateStorefrontToken:
   //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
 
-  privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
-  privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
+  // privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
+  // privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
+
+  // privateFlitsUserId : import.meta.env.PRIVATE_FLITS_USER_ID,
+  // privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN,
 });
 
 export function FlitsWishlist(product) {
@@ -43,7 +46,7 @@ export function FlitsWishlist(product) {
       wsl_product_count: '1',
     };
     let addUrl =
-      'https://app.getflits.com/api/1/'+privateFlitsUserId+'/wishlist/add_to_wishlist?token='+privateFlitsToken;
+      'https://app.getflits.com/api/1/'+import.meta.env.PRIVATE_FLITS_USER_ID+'/wishlist/add_to_wishlist?token='+import.meta.env.PRIVATE_FLITS_TOKEN;
     // '//flits-support-workplace-8.myshopify.com/apps/flits/api/1/25014/wishlist/add_to_wishlist';
     const things = fetchSync(addUrl, {
       method: 'POST',
