@@ -5,13 +5,15 @@ export default defineConfig({
   // privateStorefrontToken:
   //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
 
-  privateFlitsUserId:import.meta.env.PRIVATE_FLITS_USER_ID,
-  privateFlitsToken:import.meta.env.PRIVATE_FLITS_TOKEN,
   // privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
   // privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
 });
 
 export function FlitsWishlist(product) {
+
+  var privateFlitsUserId = import.meta.env.PRIVATE_FLITS_USER_ID;
+  var privateFlitsToken = import.meta.env.PRIVATE_FLITS_TOKEN;
+
   const handleClick = () => {
     // let params = {
     //   customer_hash:
