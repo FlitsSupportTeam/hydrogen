@@ -14,11 +14,11 @@ import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 
 // });
 
-export default Component() {
-  const url = import.meta.env.PUBLIC_MY_API_URL;
-  // import.meta.env.MY_SECRET_API_TOKEN is undefined
-  // ...
-}
+// export default Component() {
+//   const url = import.meta.env.PUBLIC_MY_API_URL;
+//   // import.meta.env.MY_SECRET_API_TOKEN is undefined
+//   // ...
+// }
 
 console.log(import.meta.env.storefrontToken);
 
