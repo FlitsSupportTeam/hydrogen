@@ -1,6 +1,14 @@
 import {fetchSync} from '@shopify/hydrogen';
 import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 
+export default defineConfig({
+  // privateStorefrontToken:
+  //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
+
+  privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
+  privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
+});
+
 export function FlitsWishlist(product) {
   const handleClick = () => {
     // let params = {
@@ -31,7 +39,7 @@ export function FlitsWishlist(product) {
       wsl_product_count: '1',
     };
     let addUrl =
-      'https://app.getflits.com/api/1/'+Oxygen?.env?.PRIVATE_FLITS_USER_ID+'/wishlist/add_to_wishlist?token='+Oxygen?.env?.PRIVATE_FLITS_TOKEN;
+      'https://app.getflits.com/api/1/'+privateFlitsUserId+'/wishlist/add_to_wishlist?token='+privateFlitsToken;
     // '//flits-support-workplace-8.myshopify.com/apps/flits/api/1/25014/wishlist/add_to_wishlist';
     const things = fetchSync(addUrl, {
       method: 'POST',
