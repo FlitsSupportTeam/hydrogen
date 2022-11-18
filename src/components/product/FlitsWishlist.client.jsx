@@ -1,27 +1,45 @@
 import {fetchSync} from '@shopify/hydrogen';
 export function FlitsWishlist(product) {
   const handleClick = () => {
+    // let params = {
+    //   customer_hash:
+    //     'bd99e18813e522e5c316bfc797a2cfd59316df43c01b6d9b5332eb1168c7a5cb',
+    //   token: 'aea2d51a7001fb777e1ad17a4a646612',
+    //   customer_id: '6335585747109',
+    //   customer_email: 'james@getflits.com',
+    //   product_id: '7969517338789',
+    //   product_handle: 'bangle-bracelet',
+    //   product_title: 'Bangle Bracelet',
+    //   product_image:
+    //     '//cdn.shopify.com/s/files/1/0616/2566/3653/products/bangle-bracelet-with-jewels_925x_0dbaba1d-1b52-4132-8526-59bc062865bc_small.jpg?v=1662032396',
+    //   wsl_product_count: '1',
+    // };
+
     let params = {
-      customer_hash:
-        'bd99e18813e522e5c316bfc797a2cfd59316df43c01b6d9b5332eb1168c7a5cb',
-      token: 'aea2d51a7001fb777e1ad17a4a646612',
+      // customer_hash:
+      //   'bd99e18813e522e5c316bfc797a2cfd59316df43c01b6d9b5332eb1168c7a5cb',
+      // token: '268c7946247c11a462970ec8ee0b195b',
       customer_id: '6335585747109',
       customer_email: 'james@getflits.com',
-      product_id: '7969517338789',
-      product_handle: 'bangle-bracelet',
-      product_title: 'Bangle Bracelet',
+      product_id: '7969514815653',
+      product_handle: 'ocean-blue-shirt',
+      product_title: 'Ocean Blue Shirt',
       product_image:
-        '//cdn.shopify.com/s/files/1/0616/2566/3653/products/bangle-bracelet-with-jewels_925x_0dbaba1d-1b52-4132-8526-59bc062865bc_small.jpg?v=1662032396',
+        '//cdn.shopify.com/s/files/1/0616/2566/3653/products/young-man-in-bright-fashion_925x_935f447e-2403-4228-91af-0ade63b6bf80.jpg?v=1662032341',
       wsl_product_count: '1',
     };
     let addUrl =
-      '//flits-support-workplace-8.myshopify.com/apps/flits/api/1/25014/wishlist/add_to_wishlist';
+      'https://app.getflits.com/api/1/'+{Oxygen.env.FLITS_USER_ID}+'/wishlist/add_to_wishlist?token='+{Oxygen.env.FLITS_TOKEN};
+    // '//flits-support-workplace-8.myshopify.com/apps/flits/api/1/25014/wishlist/add_to_wishlist';
     const things = fetchSync(addUrl, {
       method: 'POST',
       data: params,
       contentType: 'application/x-www-form-urlencoded',
-      mode: 'no-cors',
-    });
+      // headers:{
+      //   'access-control-allow-origin' : '*',
+      // }
+      // mode: 'no-cors',x
+    }).json();
   };
 
   return (
