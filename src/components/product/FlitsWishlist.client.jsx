@@ -9,16 +9,11 @@ export default defineConfig({
   // privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
 
   privateFlitsUserId : import.meta.env.PRIVATE_FLITS_USER_ID,
-  privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN,
-
-  console.log(privateFlitsUserId),
-  console.log(privateFlitsToken),
-  
-//   console.log(import.meta.env.PRIVATE_FLITS_USER_ID);
-// console.log(import.meta.env.PRIVATE_FLITS_TOKEN); 
+  privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN
 });
 
-
+  console.log(privateFlitsUserId);
+console.log(privateFlitsToken); 
 
 export function FlitsWishlist(product) {
 
