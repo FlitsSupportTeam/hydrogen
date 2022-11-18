@@ -12,6 +12,9 @@ export default defineConfig({
   // privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN,
 });
 
+console.log(import.meta.env.PRIVATE_FLITS_USER_ID);
+console.log(import.meta.env.PRIVATE_FLITS_TOKEN); 
+
 export function FlitsWishlist(product) {
 
   // var privateFlitsUserId = import.meta.env.PRIVATE_FLITS_USER_ID;
