@@ -1,4 +1,6 @@
 import {fetchSync} from '@shopify/hydrogen';
+import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
+
 export function FlitsWishlist(product) {
   const handleClick = () => {
     // let params = {
