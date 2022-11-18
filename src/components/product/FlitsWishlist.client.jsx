@@ -1,19 +1,26 @@
 import {fetchSync} from '@shopify/hydrogen';
 import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 
-export default defineConfig({
-  // privateStorefrontToken:
-  //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
+// export default defineConfig({
+//   // privateStorefrontToken:
+//   //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
 
-  // privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
-  // privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
+//   // privateFlitsUserId:Oxygen?.env?.PRIVATE_FLITS_USER_ID,
+//   // privateFlitsToken:Oxygen?.env?.PRIVATE_FLITS_TOKEN,
 
-  privateFlitsUserId : import.meta.env.PRIVATE_FLITS_USER_ID,
-  privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN
-});
+//   // privateFlitsUserId : import.meta.env.PRIVATE_FLITS_USER_ID,
+//   // privateFlitsToken : import.meta.env.PRIVATE_FLITS_TOKEN
+//   const flitsUserId = import.meta.env.PRIVATE_FLITS_USER_ID;
 
-  console.log(privateFlitsUserId);
-console.log(privateFlitsToken); 
+// });
+
+export default Component() {
+  const url = import.meta.env.PUBLIC_MY_API_URL;
+  // import.meta.env.MY_SECRET_API_TOKEN is undefined
+  // ...
+}
+
+console.log(import.meta.env.storefrontToken);
 
 export function FlitsWishlist(product) {
 
