@@ -1,5 +1,5 @@
 import {fetchSync} from '@shopify/hydrogen';
-import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
+import {defineConfig, CookieSessionStorage, Oxygen} from '@shopify/hydrogen/config';
 
 // export default defineConfig({
 //   // privateStorefrontToken:
