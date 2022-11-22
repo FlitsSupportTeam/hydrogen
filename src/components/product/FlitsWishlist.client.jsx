@@ -20,7 +20,7 @@ import {defineConfig, CookieSessionStorage} from '@shopify/hydrogen/config';
 //   // ...
 // }
 
-console.log(import.meta.env.storefrontToken);
+console.log(Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN);
 
 export function FlitsWishlist(product) {
 
