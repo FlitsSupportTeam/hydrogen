@@ -79,7 +79,7 @@ export default function Product() {
                   )}
                 </div>
                 <ProductForm />
-                <FlitsWishlist data={product} />
+                <FlitsWishlist data={product} data1={Oxygen.env.PRIVATE_STOREFRONT_API_TOKEN} />
                 <div className="grid gap-4 py-4">
                   {descriptionHtml && (
                     <ProductDetail
